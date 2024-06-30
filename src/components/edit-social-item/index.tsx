@@ -12,15 +12,15 @@ import { variants, animations } from './animations';
 import { groups } from './fields';
 import * as S from './styles';
 
+export type EditSocialItemRef = {
+  closeEditForm: () => void;
+};
+
 type EditSocialItemProps = {
   social: string;
   icon: string;
   short_name?: string;
   refs: EditSocialItemRef[];
-};
-
-export type EditSocialItemRef = {
-  closeEditForm: () => void;
 };
 
 const EditSocialItem: React.ForwardRefRenderFunction<

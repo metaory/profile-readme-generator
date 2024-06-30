@@ -1,5 +1,5 @@
 import { AnimateSharedLayout } from 'framer-motion';
-import { StyledIcon } from '@styled-icons/styled-icon';
+import { StyledIcon } from 'styled-icons/types';
 
 import * as S from './styles';
 import { useEffect } from 'react';

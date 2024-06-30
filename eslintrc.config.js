@@ -1,0 +1,48 @@
+import stylistic from '@stylistic/eslint-plugin';
+import typescript from '@typescript-eslint';
+
+export default [
+  {
+    plugins: {
+      '@stylistic': stylistic,
+      '@typescript-eslint': typescript,
+    },
+    env: {
+      browser: true,
+      es2020: true,
+      node: true,
+      jest: true,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    extends: [
+      'next',
+      'plugin:@typescript-eslint/eslint-recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:prettier/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 11,
+      sourceType: 'module',
+    },
+    rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'off',
+      'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'no-unused-vars': 'off',
+      '@stylistic/quotes': ['error', 'single'],
+      '@typescript-eslint/no-unused-vars': ['error'],
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@next/next/no-img-element': 'off',
+    },
+  },
+];

@@ -1,11 +1,11 @@
-import { useRef } from 'react';
 import { AnimatePresence, Reorder } from 'framer-motion';
+import { useRef } from 'react';
 
 import { GroupFields, TechIconVariants, TechIconVariantsRef } from 'components';
 import { useCanvas, useForceUpdate } from 'hooks';
 
-import { getDeepObjectProperty } from 'utils';
 import { events } from 'app';
+import { getDeepObjectProperty } from 'utils';
 
 import { variants } from './animations';
 import { fields } from './fields';
@@ -18,14 +18,14 @@ type Icons = {
 };
 
 const Editing = () => {
-  const techIconVariantsRefs = useRef<TechIconVariantsRef[]>([]);
+  const techIconVariantsRefs = useRef<(TechIconVariantsRef | null)[]>([]);
 
   const forceUpdate = useForceUpdate();
   const { currentSection } = useCanvas();
 
   const selectedIcons = getDeepObjectProperty<Icons>(
     currentSection,
-    'props.content.icons'
+    'props.content.icons',
   )!;
 
   const icons = Object.entries(selectedIcons);
@@ -46,24 +46,29 @@ const Editing = () => {
     setTimeout(forceUpdate, 200);
   };
 
+  const setRef = (index: number) => (ref: TechIconVariantsRef | null): void => {
+    techIconVariantsRefs.current[index] = ref;
+  };
+
+  // Filter out null values before passing to a component that expects EditSocialItemRef[]
+  const nonNullRefs = techIconVariantsRefs.current.filter((ref): ref is TechIconVariantsRef => ref !== null);
+
   return (
     <S.Container
-      initial="closed"
-      animate="open"
+      initial='closed'
+      animate='open'
       variants={variants.container}
       layoutScroll
     >
-      {fields.map(field => (
-        <GroupFields key={field.id} {...field} />
-      ))}
+      {fields.map(field => <GroupFields key={field.id} {...field} />)}
 
       <AnimatePresence>
-        <Reorder.Group axis="y" values={icon_names} onReorder={handleOnReOrder}>
-          {icons.map(([name, props], index) => (
+        <Reorder.Group axis='y' values={icon_names} onReorder={handleOnReOrder}>
+          {icons.map(([_, props], index) => (
             <TechIconVariants
-              key={name}
-              ref={ref => (techIconVariantsRefs.current[index] = ref!)}
-              refs={techIconVariantsRefs.current}
+              key={index}
+              ref={setRef(index)}
+              refs={nonNullRefs}
               {...props}
             />
           ))}

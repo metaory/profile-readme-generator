@@ -1,4 +1,4 @@
-import { StyledIcon } from '@styled-icons/styled-icon';
+import { StyledIcon } from 'styled-icons/types';
 import { Plus, Edit2 } from '@styled-icons/feather';
 
 import { views } from './views';

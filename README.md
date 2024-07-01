@@ -110,7 +110,7 @@ https://user-images.githubusercontent.com/54520907/173442002-dafc63ea-321f-4ce2-
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your system. ([nvm](https://github.com/nvm-sh/nvm#node-version-manager---) recommended).
+Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your system. ([github.com/schniz/fnm](https://github.com/Schniz/fnm) recommended).
 
 ## :checkered_flag: Starting ##
 
@@ -118,14 +118,14 @@ Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) 
 # Clone this project
 $ git clone https://github.com/maurodesouza/profile-readme-generator
 
-# Access
+# Navigate
 $ cd profile-readme-generator
 
 # Install dependencies
-$ yarn
+$ corepack use pnpm@latest
 
 # Run the project
-$ yarn dev
+$ npm run dev
 
 # The server will initialize in the <http://localhost:3000>
 ```

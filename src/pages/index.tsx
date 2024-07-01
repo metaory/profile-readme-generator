@@ -1,7 +1,7 @@
 import { CanvasTemplate } from 'templates';
 
 const Home = () => {
-  return <CanvasTemplate />;
+  return <CanvasTemplate suppressHydrationWarning />;
 };
 
 export default Home;

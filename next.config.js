@@ -14,10 +14,11 @@ const withPWA = pwa({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  output: 'export',
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
 };
 
 export default compose([withBundleAnalyzer, withPWA], nextConfig);

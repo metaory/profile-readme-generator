@@ -10,16 +10,16 @@ const Footer = () => {
     <S.Container>
       <S.Wrapper>
         <S.Image
-          src="/assets/icon-32.png"
-          alt="A white circle with a dark file icon outlined in the center"
+          src='/assets/icon-32.png'
+          alt='A white circle with a dark file icon outlined in the center'
         />
         <S.Project>Profile Readme Generator</S.Project>
         <S.Mention>
           Developed and maintained by{' '}
           <a
-            href="https://github.com/maurodesouza"
-            target="_blank"
-            rel="noreferrer"
+            href='https://github.com/maurodesouza'
+            target='_blank'
+            rel='noreferrer'
           >
             Mauro de Souza
           </a>
@@ -38,7 +38,7 @@ const Footer = () => {
 
       <Restore />
 
-      <Link href="/result" passHref>
+      <Link href='/result' passHref>
         <S.GenerateLink onClick={() => api.put('generated-readmes')}>
           Generate README
         </S.GenerateLink>

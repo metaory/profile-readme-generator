@@ -118,14 +118,14 @@ Before starting :checkered_flag:, make sure you have [Git](https://git-scm.com) 
 # Clone this project
 $ git clone https://github.com/maurodesouza/profile-readme-generator
 
-# Access
+# Navigate
 $ cd profile-readme-generator
 
 # Install dependencies
-$ yarn
+$ corepack use pnpm@latest
 
 # Run the project
-$ yarn dev
+$ npm run dev
 
 # The server will initialize in the <http://localhost:3000>
 ```

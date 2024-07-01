@@ -16,6 +16,9 @@ const withPWA = pwa({
 const nextConfig = {
   output: 'export',
   distDir: 'dist',
+    compiler: {
+    styledComponents: true,
+  },
   // i18n: {
   //   locales: ['en'],
   //   defaultLocale: 'en',

@@ -6,7 +6,6 @@ const config = {
     'src/**/*.ts(x)?',
     '!src/pages/**/*.ts(x)?',
     '!src/templates/**/*.ts(x)?',
-    '!src/services/**/*.ts(x)?',
     '!src/styles/**/*.ts',
     '!src/types/**/*.ts',
 

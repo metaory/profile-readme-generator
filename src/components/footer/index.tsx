@@ -1,6 +1,6 @@
 import { Backup, Restore } from 'components';
 import Link from 'next/link';
-import { api } from 'services';
+// import { api } from 'services';
 
 import { navItems } from './nav';
 import * as S from './styles';
@@ -39,7 +39,7 @@ const Footer = () => {
       <Restore />
 
       <Link href='/result' passHref>
-        <S.GenerateLink onClick={() => api.put('generated-readmes')}>
+        <S.GenerateLink>
           Generate README
         </S.GenerateLink>
       </Link>

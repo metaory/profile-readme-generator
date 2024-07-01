@@ -7,7 +7,6 @@ const Features = () => {
     import('./stats');
     import('./socials');
     import('./snake');
-    import('./profile-views');
     import('./music');
     import('./image');
     import('./activities');

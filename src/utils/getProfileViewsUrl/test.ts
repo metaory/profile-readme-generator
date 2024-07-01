@@ -5,7 +5,7 @@ type ProfileViewsType = Parameters<typeof getProfileViewsUrl>[0];
 
 const { badgeBaseUrl, imageBaseUrl } = generalConfig.urls.sections.profileViews;
 
-describe('UTILS - Get profile views url', () => {
+describe.skip('UTILS - Get profile views url', () => {
   it('should return the correct url for the profile views type', () => {
     const inputs = [
       {

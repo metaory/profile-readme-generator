@@ -15,6 +15,7 @@ const withPWA = pwa({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  distDir: 'dist',
   // i18n: {
   //   locales: ['en'],
   //   defaultLocale: 'en',
